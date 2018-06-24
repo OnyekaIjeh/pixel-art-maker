@@ -4,10 +4,10 @@
 
 //makeGrid function receives number of rows and columns and the canvas
 function makeGrid(row, col, canvas) {
-  var grid = ''
-  for (var x = 0; x < row; x++) {
+  let grid = ''
+  for (let x = 0; x < row; x++) {
     grid += '<tr>'
-    for (var y = 0; y < col; y++) {
+    for (let y = 0; y < col; y++) {
       grid += `<td id="${x}${y}"></td>` //
       if (y === col - 1) {
         grid += '</tr>'
@@ -24,15 +24,15 @@ function pickColor() {
 
 ////////////////////////////////////////////////////////////
 //initial code to run on page load
-var color = pickColor()
-var pixelCanvas = $('#pixelCanvas')
+let color = pickColor()
+let pixelCanvas = $('#pixelCanvas')
 
 $('#sizePicker').on('submit', function(e) {
   //prevent default page reload
   e.preventDefault()
   color = pickColor()
-  var row = $('#inputHeight').val()
-  var col = $('#inputWeight').val()
+  let row = $('#inputHeight').val()
+  let col = $('#inputWeight').val()
   pixelCanvas = $('#pixelCanvas')
 
   makeGrid(row, col, pixelCanvas)
